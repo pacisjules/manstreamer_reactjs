@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-
+import Mainstream from "./components/Mainstream.jsx";
 
 export default class App extends React.Component {
   state = {
@@ -13,11 +13,10 @@ export default class App extends React.Component {
     photoimg: "grayscale(0%)",
   };
 
-
   render() {
     return (
       <div className="App">
-        <p>Hallo me</p>
+        <Mainstream/>
       </div>
     );
   }
