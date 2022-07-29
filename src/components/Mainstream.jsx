@@ -1,8 +1,6 @@
 import React from "react";
 import './style.css';
 import Stations from './parts/Stations.jsx';
-import { MdExplore } from 'react-icons/md';
-import { AiTwotoneThunderbolt } from 'react-icons/ai';
 import { IoTvSharp, IoRadioSharp } from 'react-icons/io5';
 import { RiSearchEyeLine } from 'react-icons/ri';
 import { FaWhatsappSquare } from 'react-icons/fa';
