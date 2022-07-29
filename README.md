@@ -14,7 +14,7 @@
  ![image](https://user-images.githubusercontent.com/51479761/181839750-0ad73127-8512-43b4-bf7e-4716a3918075.png)
 
 ### By Testing and See real project
-Please click this Link
+Please click this Link https://enchanting-lolly-c55eaf.netlify.app
 
 
 ## How code is (On app.js)
@@ -43,7 +43,7 @@ export default class App extends React.Component {
   }
 }
 
-``
+```
 
 ## How code is (On Mainstream.jsx)
 ``` javascript
@@ -212,7 +212,7 @@ export default class Mainstream extends React.Component {
     );
   }
 }
-``
+```
 
 ## On Streaming
 
