@@ -1,3 +1,25 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(136, 0, 255); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #2c0057; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7700b3; 
+  }
+
 .container {
     color:#defdff;
 }
@@ -10,7 +32,7 @@
     float: left;
     /* border-radius: 0px 50px 0px 0px; */
     box-shadow: 3px 0px 26px #2b0043;
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -74,11 +96,11 @@
 .container .leftSide .menu2 ul li{
     width: 75%;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.2s;
     border-radius: 20px;
     justify-content: center;
 }
@@ -91,22 +113,117 @@
 .container .rightSide{
     z-index: 1;
     width: 85%;
-    height: 100vh;
+    height: fit-content;
     background-image: linear-gradient(#0e0016, #160023);
     float: right;
     position: relative;
+}
+
+.container .rightSide .header{
+    background-color: #14091b;
+    justify-content: center;
+    height: 45px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+   justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.container .rightSide .searchBox input{
+    background-color:#10001a; 
+    outline: none;
+    border: 1px solid #401a55;
+    height: 25px;
+    padding: 5px;
+    border-radius: 20px;
+    color: #FF6089;
+    width: 450px;
+    transition: all ease-in-out 0.3s;
+    margin-left: 15px;
+ }
+ 
+ .container .rightSide .searchBox input:focus{
+     width: 400px;
+     background-color:#24003a;
+     border: 1px solid #4e1d69;
+     border-radius: 18px;
+ }
+
+ .container .rightSide .mainheader{
+    width: 100%;
+    height: 300px;
+    background-color:#1a002b;
     display: flex;
     justify-content: center;
     align-items: center;
+
+ }
+
+ .mainheaderImgs{
+    width: 60%;
+    height: 270px;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .mainheaderImgs .icon {
+    color: #ff044b;
+    transition: all ease-in-out 0.3s;
+ }
+
+ .mainheaderImgs .icon:hover{
+    color: #ffd3de;
+ }
+
+ .mainphoto{
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 3px 0px 26px #2b0043;
+    position: absolute;
+    z-index: 3;
+ }
+ .mainphoto2{
+    width: 95%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 3px 0px 26px #2b0043;
+    position: absolute;
+    z-index: 2;
+ }
+.mainphoto3{
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 3px 0px 26px #2b0043;
+    position: absolute;
+    z-index: 1;
+ }
+
+
+.og_photo{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: #401a55 3px solid;
+    filter: grayscale(0%);
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
 }
 
-.Player_container{
-    width: 100%;
-    height: 10%;
-    background-color: #14091b;
-    position: fixed;
-    bottom: 0;
-    z-index: 3;
+.og_photo:hover{
+    filter: grayscale(100%);
 }
 
 .container .leftSide .searchBox{
@@ -124,24 +241,107 @@
    outline: none;
    border: 1px solid #401a55;
    height: 15px;
-   padding: 10px;
+   padding: 5px;
    border-radius: 20px;
    color: #FF6089;
+   width: 95px;
+   transition: all ease-in-out 0.3s;
 }
 
-.container .leftSide img{
+.container .leftSide .searchBox input:focus{
+    width: 115px;
+    background-color:#24003a;
+}
+
+.container .rightSide .Stations_Base{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    justify-content:stretch;
+    background-color: #10001a;
+    margin: 0 auto;
+}
+
+.container .rightSide .Stations_Base .radio_station{
     width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-top: 20px;
-    border: #401a55 3px solid;
-    filter: grayscale(0%);
+    height:200px;
+    background-color: #1f002f;
+    margin: 10px;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
 }
 
-.container .leftSide img:hover{
-    filter: grayscale(100%);
+.container .rightSide .Stations_Base .radio_station .radio_station_img{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1px;
 }
+
+.container .rightSide .Stations_Base .radio_station .radio_station_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .rightSide .Stations_Base .labelHover{
+    width: 152px;
+    height:200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff019590;
+    opacity: 0;
+}
+
+.container .rightSide .Stations_Base .radio_station:hover .labelHover{
+    opacity: 1;
+    transition: all ease-in-out 0.5s;
+}
+
+.container .rightSide .Stations_Base .labelHover .playAnime{
+    animation: infinite rotate 1s linear;
+}
+
+@keyframes rotate {
+    0% { 
+        opacity: 0; 
+        transform: scale(.3);
+     }
+     50% { 
+        opacity: 1;
+        transform: scale(1.05);
+     }
+     70% {
+        transform: scale(.9);
+     }
+     100% {
+        transform: scale(1);
+     }
+  }
+
+
+
+  .Stations_Laoder{
+    background-color: #10001a;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Stations_Laoder img{
+    width: 125px;
+    height: 125px;
+  }
+
 
