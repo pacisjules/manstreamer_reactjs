@@ -181,9 +181,11 @@ export default class Stations extends React.Component {
                             return <Radio key={item.radio_id} name={item.radio_name} country={item.country} src={item.logo_link} streamLink={item.stream_link} />
                         }
                         )}
+
+                    
                         
                     </div>
-
+                    <div className="separator"></div>
                 </>
             )
         } else {

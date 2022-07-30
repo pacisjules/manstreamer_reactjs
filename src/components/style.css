@@ -20,6 +20,33 @@
     background: #7700b3; 
   }
 
+
+  .container .rightSide .separator{
+    width: 100%;
+    height: 200px;
+    background-color: #10001a;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+ }
+
+.sideMenu{
+    display: none;
+    font-size: 30px;
+    margin-left: -25px;
+}
+
+.container .leftSide .Closemenu{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    margin-right: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
 .container {
     color:#defdff;
 }
@@ -37,6 +64,7 @@
     justify-content:flex-start;
     align-items: center;
     flex-direction: column;
+    transition: all ease-in-out 1s;
 }
 
 .container .leftSide .menu1{
@@ -344,4 +372,93 @@
     height: 125px;
   }
 
+  @media only screen and (max-width: 768px) {
+
+    .sideMenu{
+        display: flex;
+        font-size: 30px;
+        margin-left: -55px;
+    }
+
+    .sideMenu:focus{
+        color: #ff044b;
+    }
+
+    .container .leftSide{
+        display: none;
+        width: 100%;
+        transition: all ease-in-out 1s;
+    }
+
+    .container .leftSide .menu1{
+        display: flex;
+        width: 90%;
+    }
+/* 
+    .container .leftSide .menu2{
+        display: flex;
+    }
+*/
+    .container .leftSide .searchBox{
+        display: flex;
+        width: 100%;
+    } 
+
+
+    .srchMain{
+        display: none;
+    }
+
+    .container .rightSide{
+        z-index: 1;
+        width: 100%;
+        height: fit-content;
+        background-image: linear-gradient(#0e0016, #160023);
+        float: right;
+        position: relative;
+    }
+
+    .container .rightSide .searchBox input{
+        background-color:#10001a; 
+        outline: none;
+        border: 1px solid #401a55;
+        height: 25px;
+        padding: 5px;
+        border-radius: 20px;
+        color: #FF6089;
+        width: 150px;
+        transition: all ease-in-out 0.3s;
+        margin-left: 15px;
+     }
+
+     .container .rightSide .searchBox input:focus{
+        width: 160px;
+        background-color:#24003a;
+        border: 1px solid #4e1d69;
+        border-radius: 18px;
+    }
+  }
+
+
+
+  @media only screen and (max-width: 336px) {
+    .container .rightSide .Stations_Base{
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .container .rightSide .Stations_Base .radio_station{
+        width: 140px;
+        height:220px;
+    }
+
+    .container .rightSide .searchBox input{
+        display: none;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+    .container .rightSide .searchBox input{
+        display: none;
+    }
+  }
 

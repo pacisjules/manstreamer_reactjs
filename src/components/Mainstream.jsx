@@ -5,13 +5,14 @@ import { IoTvSharp, IoRadioSharp } from 'react-icons/io5';
 import { RiSearchEyeLine } from 'react-icons/ri';
 import { FaWhatsappSquare } from 'react-icons/fa';
 import { ImPrevious2, ImNext2 } from 'react-icons/im'
-
-
+import { CgMenuGridR } from 'react-icons/cg'
+import { RiCloseCircleFill } from 'react-icons/ri'
 export default class Mainstream extends React.Component {
 
   state = {
     message: "test",
-    result: ""
+    result: "",
+    onSide: "none",
   };
 
 
@@ -31,6 +32,70 @@ export default class Mainstream extends React.Component {
   render() {
     return (
       <div className="container">
+        <div className="leftSide" style={{
+          display: this.state.onSide
+        }}>
+
+
+          <div className="searchBox">
+            <RiSearchEyeLine style={{
+              fontSize: '30px',
+              marginRight: '10px',
+              color: '#401a55'
+            }} />
+            <input type="text" placeholder="Search here.." />
+          </div>
+
+          <RiCloseCircleFill className="Closemenu" onClick={() => {
+            this.setState({
+              onSide: "none"
+            })
+          }} style={{
+            display: this.state.onSide,
+          }} />
+
+
+          <div className="menu1">
+            <ul>
+              {/* <li><MdExplore style={{
+                fontSize: "20px",
+                color: "#00bfff",
+                marginRight: "10px"
+              }} /> Explore</li>
+              <li><AiTwotoneThunderbolt style={{
+                fontSize: "20px",
+                color: "#d400ff",
+                marginRight: "10px"
+              }} /> Chanel</li> */}
+              <li><IoTvSharp style={{
+                fontSize: "20px",
+                color: "#ff0080",
+                marginRight: "10px"
+              }} /> Tvs</li>
+              <li><IoRadioSharp style={{
+                fontSize: "20px",
+                color: "#80ff00",
+                marginRight: "10px"
+              }} /> Radios</li>
+            </ul>
+          </div>
+          <div className="menu2">
+            <h3>Favorites</h3>
+            <br />
+
+            <ul>
+              {/* <li>Bongo</li>
+              <li>Sport</li> */}
+              <li>News</li>
+              <li>Music</li>
+            </ul>
+          </div>
+
+
+
+        </div>
+
+
         <div className="leftSide">
 
 
@@ -42,6 +107,14 @@ export default class Mainstream extends React.Component {
             }} />
             <input type="text" placeholder="Search here.." />
           </div>
+
+          <RiCloseCircleFill className="Closemenu" onClick={() => {
+            this.setState({
+              onSide: "none"
+            })
+          }} style={{
+            display: this.state.onSide,
+          }} />
 
 
           <div className="menu1">
@@ -86,10 +159,13 @@ export default class Mainstream extends React.Component {
         <div className="rightSide">
 
           <div className="header">
+            <CgMenuGridR className="sideMenu" onClick={() => {
+              this.setState({
+                onSide: "flex",
+              })
+            }} />
             <div className="searchBox">
-
-              
-              <RiSearchEyeLine style={{
+              <RiSearchEyeLine className="srchMain" style={{
                 fontSize: '30px',
                 color: '#a300a8',
                 marginLeft: "15px",
@@ -103,14 +179,14 @@ export default class Mainstream extends React.Component {
               fontSize: '30px',
               color: 'white',
               float: "right",
-              marginRight:"-55px",
+              marginRight: "-55px",
               marginTop: "5px",
               cursor: "pointer"
             }} /></a>
-            
 
-            <p><marquee>{"Now streaming "+localStorage.getItem("radio_name")+", " +localStorage.getItem("radio_country")+"....."}</marquee></p>
-            
+
+            {/* <p><marquee>{"Now streaming "+localStorage.getItem("radio_name")+", " +localStorage.getItem("radio_country")+"....."}</marquee></p> */}
+
           </div>
 
           <div className="mainheader">
