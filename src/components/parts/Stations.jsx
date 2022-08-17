@@ -7,6 +7,7 @@ import Infinity from '../../assets/imgs/Infinity.gif';
 import { MdSkipPrevious, MdSkipNext, MdPlayCircleFilled, MdVolumeUp, MdOutlinePauseCircleFilled } from 'react-icons/md';
 
 const umuziki = new Audio();
+
 localStorage.setItem('playState', false);
 localStorage.setItem('play_up', 0);
 
@@ -16,12 +17,13 @@ localStorage.setItem('pause', 'none');
 
 class Radio extends React.Component {
     render() {
-        return <div className="radio_station" onClick={() => {
+        return <div className="radio_station" onClick={async () => {
             localStorage.setItem('Stream_Radio', this.props.streamLink);
             umuziki.src = localStorage.getItem('Stream_Radio');
             umuziki.volume = 15 / 100;
-            umuziki.play();
 
+            try{
+            umuziki.play();
             localStorage.setItem('playState', true);
             localStorage.setItem('radio_name', this.props.name);
             localStorage.setItem('radio_country', this.props.country);
@@ -29,6 +31,11 @@ class Radio extends React.Component {
             localStorage.setItem('play_up', 1);
             localStorage.setItem('play', 'none');
             localStorage.setItem('pause', 'flex');
+            }
+            catch(err){
+                alert('Error in stream '+err);
+            }
+            
         }}>
             <div className="labelHover">
                 <BsFillPlayCircleFill className="playAnime" style={{
@@ -82,7 +89,6 @@ export default class Stations extends React.Component {
             })
     }
 
-
     timer = setInterval(() => {
         this.setState({
             playState: localStorage.getItem('playState'),
@@ -110,6 +116,9 @@ export default class Stations extends React.Component {
         localStorage.setItem('pause', 'none');
         localStorage.setItem('play_up', 0);
     }
+
+
+
 
     render() {
         if (this.state.apisStatusLoad === true) {
@@ -181,10 +190,13 @@ export default class Stations extends React.Component {
                             return <Radio key={item.radio_id} name={item.radio_name} country={item.country} src={item.logo_link} streamLink={item.stream_link} />
                         }
                         )}
-
-                    
-                        
                     </div>
+
+                <div>
+                    <audio controlsList="nodownload" controls>
+                    <source src="http://80.241.215.175:8000/;stream.mp3" type="audio/mpeg" />
+                    </audio>
+                </div>
                     <div className="separator"></div>
                 </>
             )
