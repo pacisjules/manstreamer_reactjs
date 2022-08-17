@@ -2,6 +2,10 @@
  Project will help you to stream radios  and tvs online. Don't be stress while in Job use this app
  and some time you need to watch some Tvs without Antena use our streaming
  
+ ## Can be run on
+ * Web
+ * Mobile
+ 
  ## How it's Work
  ### This Startap for everyone you can select radio you need.
   by clicking the Radiowith name, Country and its Icon
@@ -12,6 +16,10 @@
  and to volume will help you reduce or increase sound volume
  
  ![image](https://user-images.githubusercontent.com/51479761/181839750-0ad73127-8512-43b4-bf7e-4716a3918075.png)
+ 
+ ### View on mobile
+ ![image](https://user-images.githubusercontent.com/51479761/181906283-e37a7051-3055-40fc-8e0f-73f22fd951f9.png)
+
 
 ### By Testing and See real project
 Please click this Link https://enchanting-lolly-c55eaf.netlify.app
